@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>School Assistant</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="app-container">
+        <!-- Header -->
+        <header class="app-header">
+            <h1>📚 School Assistant</h1>
+            <p>Reminders, Chat, Calculator & Clock</p>
+        </header>
+
+        <!-- Navigation Tabs -->
+        <nav class="navbar">
+            <button class="nav-btn active" data-tab="reminders">📝 Reminders</button>
+            <button class="nav-btn" data-tab="chat">💬 Chat</button>
+            <button class="nav-btn" data-tab="calculator">🧮 Calculator</button>
+            <button class="nav-btn" data-tab="clock">🕐 Clock</button>
+        </nav>
+
+        <!-- TAB 1: REMINDERS -->
+        <div id="reminders" class="tab-content active">
+            <div class="section-title">📚 Lesson Reminders</div>
+            
+            <div class="form-group">
+                <input type="text" id="reminderTitle" placeholder="Lesson name (e.g., Math)">
+                <input type="time" id="reminderTime">
+                <select id="reminderSubject">
+                    <option value="">Select Subject</option>
+                    <option value="📐 Math">📐 Math</option>
+                    <option value="📖 English">📖 English</option>
+                    <option value="🔬 Science">🔬 Science</option>
+                    <option value="🌍 History">🌍 History</option>
+                    <option value="⚽ PE">⚽ PE</option>
+                    <option value="🎨 Art">🎨 Art</option>
+                    <option value="🎵 Music">🎵 Music</option>
+                    <option value="💻 IT">💻 IT</option>
+                </select>
+                <button id="addReminderBtn" class="btn btn-primary">Add Reminder</button>
+            </div>
+
+            <div id="remindersList" class="reminders-list"></div>
+        </div>
+
+        <!-- TAB 2: CHAT -->
+        <div id="chat" class="tab-content">
+            <div class="section-title">💬 Chat with Friends</div>
+            
+            <div class="chat-container">
+                <div id="chatMessages" class="chat-messages"></div>
+                <div class="chat-input-area">
+                    <input type="text" id="chatInput" placeholder="Type a message...">
+                    <button id="sendMessageBtn" class="btn btn-primary">Send</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- TAB 3: CALCULATOR -->
+        <div id="calculator" class="tab-content">
+            <div class="section-title">🧮 Calculator</div>
+            
+            <div class="calculator">
+                <div id="calcDisplay" class="calc-display">0</div>
+                <div class="calc-buttons">
+                    <button class="calc-btn clear" id="calcClear">C</button>
+                    <button class="calc-btn" data-value="/">÷</button>
+                    <button class="calc-btn" data-value="*">×</button>
+                    <button class="calc-btn" data-value="backspace">←</button>
+                    
+                    <button class="calc-btn" data-value="7">7</button>
+                    <button class="calc-btn" data-value="8">8</button>
+                    <button class="calc-btn" data-value="9">9</button>
+                    <button class="calc-btn" data-value="-">−</button>
+                    
+                    <button class="calc-btn" data-value="4">4</button>
+                    <button class="calc-btn" data-value="5">5</button>
+                    <button class="calc-btn" data-value="6">6</button>
+                    <button class="calc-btn" data-value="+">+</button>
+                    
+                    <button class="calc-btn" data-value="1">1</button>
+                    <button class="calc-btn" data-value="2">2</button>
+                    <button class="calc-btn" data-value="3">3</button>
+                    <button class="calc-btn" data-value=".">.</button>
+                    
+                    <button class="calc-btn" data-value="0" style="grid-column: span 2;">0</button>
+                    <button class="calc-btn equals" id="calcEquals">=</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- TAB 4: CLOCK -->
+        <div id="clock" class="tab-content">
+            <div class="section-title">🕐 Clock</div>
+            
+            <div class="clock-container">
+                <!-- Digital Clock -->
+                <div class="digital-clock">
+                    <div id="timeDisplay" class="time-display">00:00:00</div>
+                    <div id="dateDisplay" class="date-display">00/00/0000</div>
+                </div>
+
+                <!-- Analog Clock -->
+                <div class="analog-clock">
+                    <div class="clock-face">
+                        <div class="hand hour-hand" id="hourHand"></div>
+                        <div class="hand minute-hand" id="minuteHand"></div>
+                        <div class="hand second-hand" id="secondHand"></div>
+                        <div class="center-dot"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+</html>
